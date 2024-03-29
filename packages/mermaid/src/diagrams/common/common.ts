@@ -357,7 +357,7 @@ export const renderKatex = async (text: string, config: MermaidConfig): Promise<
         .renderToString(c, {
           throwOnError: true,
           displayMode: true,
-          output: isMathMLSupported() ? 'mathml' : 'htmlAndMathml',
+          output: !config.legacyMathML ? 'mathml' : 'htmlAndMathml',
         })
         .replace(/\n/g, ' ')
         .replace(/<annotation.*<\/annotation>/g, '')
