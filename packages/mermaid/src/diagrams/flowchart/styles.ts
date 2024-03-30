@@ -1,3 +1,4 @@
+/* eslint-disable @cspell/spellchecker */
 // import khroma from 'khroma';
 import * as khroma from 'khroma';
 
@@ -67,9 +68,13 @@ const getStyles = (options: FlowChartStyleOptions) =>
   // }
 
   .node .katex path {
-    fill: #000;
-    stroke: #000;
+    fill: ${options.nodeTextColor || options.textColor};
+    stroke: ${options.nodeTextColor || options.textColor};
     stroke-width: 1px;
+  }
+
+  .katex .delimcenter, .katex .op-symbol {
+    position: static;
   }
 
   .node .label {
